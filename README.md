@@ -33,11 +33,9 @@ The project's backend was implemented using Json-server, a simple yet effective 
 
 ## Technologies
 
-- Node 14.16.0
+- Node 18.8.0
 - VSC code
-- JavaScript
-- ...
-- ...
+- React 18.2.0
 
 ## Setup
 

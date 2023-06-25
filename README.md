@@ -52,57 +52,46 @@ starts the backend on port 3000
 ## Code Examples
 
 ```js
-// Toggle Reminder
-  const toggleReminder = (id) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === id ? { ...task, reminder: !task.reminder } : task
-      )
-    );
-  };
-
-  return (
-    <Router>
-      <div className="container">
-        <Header
-          onAdd={() => setShowAddTask(!showAddTask)}
-          showAdd={showAddTask}
+return (
+  <Router>
+    <div className="container">
+      <Header
+        onAdd={() => setShowAddTask(!showAddTask)}
+        showAdd={showAddTask}
+      />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            // Specify the element prop here instead of using the render prop
+            <>
+              {showAddTask && <AddTask onAdd={addTask} />}
+              {tasks.length > 0 ? (
+                <Tasks
+                  tasks={tasks}
+                  onDelete={deleteTask}
+                  onToggle={toggleReminder}
+                />
+              ) : (
+                "no task to show"
+              )}
+            </>
+          }
         />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              // Specify the element prop here instead of using the render prop
-              <>
-                {showAddTask && <AddTask onAdd={addTask} />}
-                {tasks.length > 0 ? (
-                  <Tasks
-                    tasks={tasks}
-                    onDelete={deleteTask}
-                    onToggle={toggleReminder}
-                  />
-                ) : (
-                  "no task to show"
-                )}
-              </>
-            }
-          />
-          <Route path="/about" element={<About />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
-  );
-}
+        <Route path="/about" element={<About />} />
+      </Routes>
+      <Footer />
+    </div>
+  </Router>
+);
 ```
 
 ## Features
 
 List of features
 
--
--
--
+- React UI
+- Json-server backend
 
 ## Status
 
@@ -114,7 +103,7 @@ Project by Traversy Media
 
 ## Contact
 
-By [Name]
+By bermarte
 
 ## Instructions for use
 

@@ -29,7 +29,7 @@ The project's backend was implemented using Json-server, a simple yet effective 
 
 ## Screenshots
 
-![Example screenshot](./planning/screenshot.jpg)
+![Example screenshot](./public/screenshot.jpg)
 
 ## Technologies
 
